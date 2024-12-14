@@ -19,3 +19,14 @@ window.addEventListener('click', (event) => {
         modal.style.display = 'none';
     }
 });
+
+// Анимация секций при прокрутке
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        if (section.getBoundingClientRect().top < window.innerHeight) {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }
+    });
+});
