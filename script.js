@@ -1,4 +1,10 @@
-// Получение элементов
+// Функция для переключения информации о вирусах
+function toggleInfo(infoId) {
+    const infoElement = document.getElementById(infoId);
+    infoElement.classList.toggle('active');
+}
+
+// Модальное окно
 const modal = document.getElementById('modal');
 const openModalBtn = document.getElementById('learnMore');
 const closeModalBtn = document.getElementById('closeModal');
@@ -20,7 +26,7 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// Анимация секций при прокрутке
+// Анимация появления секций при прокрутке
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
