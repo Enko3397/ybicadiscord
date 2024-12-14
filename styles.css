@@ -32,8 +32,12 @@ main {
     padding: 20px;
 }
 
+/* Анимация для секций */
 section {
     margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.7s forwards;
 }
 
 section h2 {
@@ -152,3 +156,14 @@ footer {
     margin-top: 20px;
 }
 
+/* Анимация для появления секций при прокрутке */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
