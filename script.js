@@ -1,19 +1,19 @@
-// Получаем элементы
-const openModalBtn = document.getElementById('openModal');
-const closeModalBtn = document.getElementById('closeModal');
+// Получение элементов
 const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('learnMore');
+const closeModalBtn = document.getElementById('closeModal');
 
-// Функция для открытия модального окна
+// Открытие модального окна
 openModalBtn.addEventListener('click', () => {
     modal.style.display = 'flex';
 });
 
-// Функция для закрытия модального окна
+// Закрытие модального окна
 closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
-// Закрытие модального окна при клике вне области окна
+// Закрытие модального окна при клике вне него
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
