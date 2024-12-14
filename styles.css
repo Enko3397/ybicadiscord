@@ -3,13 +3,13 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background: #1e1e2f;
-    color: white;
+    background: #f4f4f4;
+    color: #333;
 }
 
 /* Хедер */
 header {
-    background: linear-gradient(135deg, #ff4500, #ff6347);
+    background: #343a40;
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -30,6 +30,8 @@ header p {
 /* Основной контент */
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Анимация для секций */
@@ -40,52 +42,21 @@ section {
     animation: fadeInUp 0.7s forwards;
 }
 
+/* Разделы */
 section h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #ff6347;
-    text-shadow: 0 3px 10px rgba(255, 99, 71, 0.5);
+    color: #ff4500;
 }
 
-section p {
-    font-size: 1.2em;
-}
-
-section ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-section ul li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
-}
-
-.btn:hover {
-    background-color: #ff4500;
-    transform: scale(1.1);
-}
-
-/* Карточки типов вирусов */
+/* Картки вирусов */
 .card {
     background: #29293d;
     border-radius: 10px;
     padding: 20px;
     margin: 20px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -97,6 +68,17 @@ section ul li {
 .card h3 {
     color: #ff6347;
     margin-bottom: 10px;
+}
+
+.more-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.card.active .more-info {
+    display: block;
 }
 
 /* Модальное окно */
@@ -167,3 +149,4 @@ footer {
         transform: translateY(0);
     }
 }
+
