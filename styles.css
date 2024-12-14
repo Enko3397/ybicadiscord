@@ -1,48 +1,60 @@
-/* Базовые стили */
+/* Основные стили */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f5a623, #ff6347);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 1.6;
+    background: #1e1e2f;
     color: white;
-    overflow: hidden;
 }
 
-/* Главный блок */
-.hero {
+/* Хедер */
+header {
+    background: linear-gradient(135deg, #ff4500, #ff6347);
+    color: white;
+    padding: 60px 20px;
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
+header h1 {
     font-size: 3em;
-    margin-bottom: 0.5em;
-    text-shadow: 3px 3px 15px rgba(255, 99, 71, 0.7);
+    margin: 0;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 }
 
-h2 {
-    font-size: 1.5em;
-    opacity: 0.8;
-    margin-bottom: 1.5em;
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
-/* Анимация появления */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* Основной контент */
+main {
+    padding: 20px;
 }
 
-/* Кнопка */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ff6347;
+    text-shadow: 0 3px 10px rgba(255, 99, 71, 0.5);
+}
+
+section p {
+    font-size: 1.2em;
+}
+
 .btn {
-    padding: 15px 30px;
+    display: inline-block;
+    padding: 10px 20px;
     background-color: #ff6347;
     color: white;
     border: none;
     border-radius: 50px;
-    font-size: 1.2em;
+    font-size: 1em;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
@@ -51,7 +63,26 @@ h2 {
 .btn:hover {
     background-color: #ff4500;
     transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(255, 99, 71, 0.7);
+}
+
+/* Карточки типов вирусов */
+.card {
+    background: #29293d;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.card h3 {
+    color: #ff6347;
+    margin-bottom: 10px;
 }
 
 /* Модальное окно */
@@ -62,7 +93,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
 }
@@ -72,11 +103,41 @@ h2 {
     color: #333;
     border-radius: 10px;
     padding: 30px;
-    width: 60%;
-    max-width: 500px;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    animation: zoomIn 0.5s ease-out;
+    width: 60%;
+    max-width: 500px;
 }
 
-/* Анимация для модального окна */
+.modal-content h3 {
+    color: #ff6347;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+}
+
+.close-btn {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #ff4500;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #29293d;
+    color: white;
+    font-size: 1em;
+    margin-top: 20px;
+}
