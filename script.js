@@ -1,16 +1,18 @@
-const chat = document.getElementById('chat');
-const messageInput = document.getElementById('messageInput');
+const socket = io();
 
-messageInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter' && messageInput.value.trim() !== '') {
-        const message = document.createElement('div');
-        message.textContent = messageInput.value;
-        message.style.margin = "10px";
-        message.style.background = "#202225";
-        message.style.borderRadius = "5px";
-        message.style.padding = "10px";
-        chat.appendChild(message);
-        messageInput.value = '';
-        chat.scrollTop = chat.scrollHeight;
-    }
+// Отправка сообщения
+document.getElementById('message-input').addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    const message = event.target.value;
+    socket.emit('send_message', message);
+    event.target.value = '';
+  }
+});
+
+// Получение сообщений
+socket.on('receive_message', function(message) {
+  const messagesDiv = document.getElementById('messages');
+  const newMessage = document.createElement('div');
+  newMessage.textContent = message;
+  messagesDiv.appendChild(newMessage);
 });
