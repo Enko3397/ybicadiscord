@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Clone</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Clone</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app">
-        <div class="sidebar">
-            <div class="channel">General</div>
-            <div class="channel">Gaming</div>
-            <div class="channel">Music</div>
-        </div>
-        <div class="main">
-            <div class="header"># General</div>
-            <div id="chat" class="chat"></div>
-            <input id="messageInput" type="text" placeholder="Type a message...">
-        </div>
+  <div id="app">
+    <div id="sidebar">
+      <!-- Список каналов, пользователей, серверов -->
     </div>
-    <script src="script.js"></script>
+    <div id="chat">
+      <div id="messages"></div>
+      <input type="text" id="message-input" placeholder="Напишите сообщение...">
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
