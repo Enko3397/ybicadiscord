@@ -1,9 +1,30 @@
-function showDetails(virusName) {
-    let details = {
-        ILOVEYOU: "ILOVEYOU был вирусом, который распространялся через электронную почту и взломал более 50 миллионов компьютеров. Он стал причиной миллионов долларов убытков.",
-        MyDoom: "MyDoom был создан для распространения через интернет, заражая почтовые серверы и вызывая их перегрузку.",
-        CodeRed: "CodeRed был вирусом, который использовал уязвимости в веб-серверах и создавал переполнение трафика, что в свою очередь приводило к замедлению работы сайтов."
-    };
+function toggleDetails(virusName) {
+    const details = document.getElementById(virusName);
+    if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
 
-    alert(details[virusName]);
+// Анимация появления элементов
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.classList.add("hidden");
+        section.classList.add("fade-in");
+    });
+
+    window.addEventListener('scroll', () => {
+        sections.forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.remove("hidden");
+            }
+        });
+    });
+});
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
 }
